@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eef2f5;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.site {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #eef2f5;
+}
+
+/*
+  El mockup conserva exactamente la relación de aspecto de la imagen:
+  1165 / 776 = 1.5013.
+*/
+.mockup {
+  position: relative;
+  width: min(100vw, 1165px);
+  aspect-ratio: 1165 / 776;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 35px rgba(0, 20, 50, .12);
+}
+
+.reference {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hotspot {
+  position: absolute;
+  z-index: 2;
+}
+
+.hotspot button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.header-hotspot {
+  inset: 0;
+  pointer-events: none;
+}
+
+.header-hotspot nav {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hotspot-link {
+  position: absolute;
+  top: 3.8%;
+  height: 5.7%;
+  pointer-events: auto;
+  color: transparent;
+  font-size: clamp(8px, 1vw, 14px);
+}
+
+.hotspot-link:hover,
+.hotspot-link:focus-visible {
+  outline: 2px solid #315f35;
+  border-radius: 8px;
+  background: rgba(255,255,255,.08);
+}
+
+.contact-hotspot {
+  position: absolute;
+  top: 3.0%;
+  right: 2.4%;
+  width: 9.1%;
+  height: 4.7%;
+  pointer-events: auto;
+  border-radius: 9px !important;
+}
+
+.contact-hotspot:hover,
+.contact-hotspot:focus-visible {
+  outline: 3px solid rgba(255,255,255,.8);
+  outline-offset: 2px;
+}
+
+.cta-about {
+  left: 2.6%;
+  top: 52.4%;
+  width: 16.7%;
+  height: 4.4%;
+}
+
+.transparent-button {
+  width: 100%;
+  height: 100%;
+}
+
+.cta-about .transparent-button:hover,
+.cta-about .transparent-button:focus-visible {
+  outline: 2px solid #17386e;
+  border-radius: 8px;
+}
+
+.business {
+  top: 55.0%;
+  height: 6.0%;
+}
+
+.business.retail {
+  left: 53.0%;
+  width: 8.8%;
+}
+
+.business.finance {
+  left: 66.1%;
+  width: 8.8%;
+}
+
+.business.logistics {
+  left: 82.4%;
+  width: 8.8%;
+}
+
+.business .transparent-button:hover,
+.business .transparent-button:focus-visible {
+  outline: 2px solid rgba(255,255,255,.9);
+  border-radius: 20px;
+}
+
+.city {
+  top: 64.8%;
+  height: 8.5%;
+}
+
+.city.bogota { left: 24.4%; width: 7.0%; }
+.city.medellin { left: 37.0%; width: 7.0%; }
+.city.cali { left: 48.2%; width: 6.8%; }
+.city.barranquilla { left: 58.9%; width: 8.2%; }
+.city.intermedias { left: 69.0%; width: 11.0%; }
+
+.city .transparent-button:hover,
+.city .transparent-button:focus-visible {
+  outline: 2px solid #3e873f;
+  border-radius: 12px;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease, visibility .2s ease;
+}
+
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 21, 48, .66);
+  backdrop-filter: blur(3px);
+}
+
+.modal-card {
+  position: relative;
+  width: min(92vw, 520px);
+  padding: 34px;
+  border-radius: 18px;
+  background: #fff;
+  color: #12284b;
+  box-shadow: 0 25px 70px rgba(0,0,0,.25);
+  transform: translateY(10px);
+  transition: transform .2s ease;
+}
+
+.modal.open .modal-card {
+  transform: translateY(0);
+}
+
+.modal-kicker {
+  margin: 0 0 8px;
+  color: #3f7f42;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+
+.modal-card h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.modal-card p:not(.modal-kicker) {
+  line-height: 1.65;
+  color: #45546a;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: #edf2f6;
+  color: #102b55;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.modal-action {
+  margin-top: 12px;
+  padding: 11px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: #09245a;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .site {
+    align-items: flex-start;
+  }
+
+  .mockup {
+    width: 100vw;
+    box-shadow: none;
+  }
+
+  .modal-card {
+    padding: 28px 24px;
+  }
+}
+
+/* En pantallas muy anchas mantenemos el tamaño máximo de la composición. */
+@media (min-width: 1166px) {
+  .site {
+    padding: 24px 0;
+  }
+
+  .mockup {
+    border-radius: 10px;
+  }
+}

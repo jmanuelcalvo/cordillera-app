@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grupo Empresarial La Cordillera — Un grupo, múltiples industrias.">
+  <title>Grupo Empresarial La Cordillera</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="site">
+    <!--
+      La composición visual está basada en la imagen de referencia.
+      El lienzo mantiene la proporción original (1165x776) para que
+      el resultado sea prácticamente idéntico al mockup.
+    -->
+    <section class="mockup" aria-label="Página principal de Grupo Empresarial La Cordillera">
+      <img
+        class="reference"
+        src="assets/cordillera-reference.png"
+        alt="Grupo Empresarial La Cordillera: Retail, Servicios Financieros y Logística"
+      >
+
+      <header class="hotspot header-hotspot">
+        <nav aria-label="Navegación principal">
+          <button class="hotspot-link" style="left:36.8%; width:7.8%" data-section="Quiénes Somos">Quiénes Somos</button>
+          <button class="hotspot-link" style="left:45.7%; width:10.5%" data-section="Unidades de Negocio">Unidades de Negocio</button>
+          <button class="hotspot-link" style="left:57.2%; width:8.2%" data-section="Sostenibilidad">Sostenibilidad</button>
+          <button class="hotspot-link" style="left:65.9%; width:6.2%" data-section="Innovación">Innovación</button>
+          <button class="hotspot-link" style="left:73.1%; width:6.0%" data-section="Inversionistas">Inversionistas</button>
+          <button class="hotspot-link" style="left:81.2%; width:5.5%" data-section="Talento">Talento</button>
+          <button class="contact-hotspot" data-section="Contáctanos">Contáctanos</button>
+        </nav>
+      </header>
+
+      <div class="hotspot cta-about">
+        <button class="transparent-button" data-section="Quiénes Somos" aria-label="Conoce más sobre nosotros"></button>
+      </div>
+
+      <div class="hotspot business retail">
+        <button class="transparent-button" data-section="Retail" aria-label="Ver información de Retail"></button>
+      </div>
+
+      <div class="hotspot business finance">
+        <button class="transparent-button" data-section="Servicios Financieros" aria-label="Ver información de Servicios Financieros"></button>
+      </div>
+
+      <div class="hotspot business logistics">
+        <button class="transparent-button" data-section="Logística" aria-label="Ver información de Logística"></button>
+      </div>
+
+      <div class="hotspot city bogota">
+        <button class="transparent-button" data-section="Bogotá" aria-label="Información de Bogotá"></button>
+      </div>
+      <div class="hotspot city medellin">
+        <button class="transparent-button" data-section="Medellín" aria-label="Información de Medellín"></button>
+      </div>
+      <div class="hotspot city cali">
+        <button class="transparent-button" data-section="Cali" aria-label="Información de Cali"></button>
+      </div>
+      <div class="hotspot city barranquilla">
+        <button class="transparent-button" data-section="Barranquilla" aria-label="Información de Barranquilla"></button>
+      </div>
+      <div class="hotspot city intermedias">
+        <button class="transparent-button" data-section="Ciudades intermedias" aria-label="Información de ciudades intermedias"></button>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="infoModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" aria-label="Cerrar" data-close>×</button>
+      <p class="modal-kicker">GRUPO EMPRESARIAL LA CORDILLERA</p>
+      <h2 id="modalTitle">Contáctanos</h2>
+      <p id="modalText"></p>
+      <button class="modal-action" data-close>Entendido</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
